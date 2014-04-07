@@ -3,7 +3,7 @@
  * This class manages all functionality with our Modern Business theme.
  */
 class ModernBusiness {
-	const MB_VERSION = '1.0.3';
+	const MB_VERSION = '1.0.4';
 
 	private static $instance; // Keep track of the instance
 
