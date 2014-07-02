@@ -24,7 +24,7 @@
 					</p>
 				<?php endif; ?>
 
-				<h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</section>
 
 			<?php sds_featured_image( true ); ?>
