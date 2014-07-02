@@ -25,12 +25,12 @@ article.content a:hover, .widget-fullbody a:hover, #post-author a:hover{
 	color: #898989;
 }
 
-body a.button{
+body a.button, .button {
 	background: #898989;
 	color: #fff;
 }
 
-body a.button:hover{
+body a.button:hover, .button:hover {
 	background: #464646;
 	-webkit-box-shadow: 0 0 2px 2px #898989;
 	box-shadow: 0 0 2px 2px #898989;
@@ -117,7 +117,7 @@ figure.post-image a:hover img{
 	border-bottom: 6px solid #898989;
 }
 
-section.post a.post-button, .post-edit-link {
+section.post a.post-button, .post-edit-link, .button {
 	background: #898989;
 	color: #fff;
 	border-top: 1px solid #ccc;
@@ -126,14 +126,14 @@ section.post a.post-button, .post-edit-link {
 
 section.post a.post-button:hover, section.widget #searchform input.submit:hover,
 section.widget form.register input[type=submit]:hover, .widget .social-media-icons a:hover,
-ul.page-numbers li a.page-numbers:hover, section.post a.post-edit-link:hover {
+ul.page-numbers li a.page-numbers:hover, section.post a.post-edit-link:hover, .button:hover {
 	background: #464646;
 	color: #fff;
 }
 
 section.post a.post-button:active, section.widget #searchform input.submit:active,
 section.widget form.register input[type=submit]:active, .widget .social-media-icons a:active,
-ul.page-numbers li a.page-numbers:active, section.post a.post-edit-link:active {
+ul.page-numbers li a.page-numbers:active, section.post a.post-edit-link:active, .button:hover {
 	background: #000;
 }
 
@@ -183,7 +183,7 @@ article.content ol.comment-list > li article, ol.comment-list > li article, ol.c
 }
 
 #comments ol.comment-list li article.bypostauthor {
-	background: #fff6f5;
+	background: #f6f6f6;
 	border-color: #ccc;
 }
 
@@ -208,7 +208,7 @@ ol.comment-list > li:nth-child(even) article.comment {
 }
 
 #respond input, #respond textarea {
-	background: #fff6f5;
+	background: #f6f6f6;
 	color: #333;
 	border: 1px solid #ccc;
 }

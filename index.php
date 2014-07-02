@@ -11,6 +11,8 @@ get_header(); ?>
 		<article class="blog-content content cf">
 			<?php get_template_part( 'loop' ); // Loop ?>
 
+			<section class="clear"></section>
+
 			<?php comments_template(); // Comments ?>
 		</article>
 

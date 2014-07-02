@@ -1,0 +1,58 @@
+==========================================
+Theme: Modern Business
+Author: Slocum Themes/Slocum Design Studio
+Author URI: http://slocumthemes.com
+Current Version: 1.1.4
+==========================================
+
+
+1.1.4 // July 02 2014
+---------------------
+- Updated to latest version of SDS Core
+- Updated CSS to accommodate new HTML markup
+- Removed default "more" link from the_content() as we output our own link at the end of content
+- Adjusted post content element width on sticky posts
+
+1.1.2 // June 04 2014
+---------------------
+- Adjusted comment response area styles on color scheme stylesheet which was previously red
+- Updated to latest version of SDS Core (fixes potential PHP warnings)
+- Fixed clearing display bug (comments)
+- Better bbPress & BuddyPress support
+- Update .pot file
+
+1.1.0 // April 23 2014
+----------------------
+- Added functionality to adjust background/content color defaults based on color scheme selected in Theme Options
+- Updated to latest version of SDS Core
+- Added load_theme_textdomain() function and .pot translation file
+- Moved $content_width declaration into after_setup_theme hook
+
+1.0.8 // April 18 2014
+----------------------
+- Updated to latest version of SDS Core (contains bugfix in logo controller and new filter for web fonts)
+- Fixed bug with responsive where content width was not 100% after 680px width
+
+1.0.5
+-----
+- Updating to latest version of SDS Core (Theme Customizer functionality)
+- Added various bits of Theme Customizer functionality to theme
+
+1.0.4
+-----
+- Removing erroneous "z" in loop.php
+
+1.0.3
+-----
+- Added HTML5 support for various default elements (search form, comments-form, comments-list)
+- Updated to newest version of SDS Core ("Default" Web Font Label)
+- Adjusted priority to 20 on after_setup_theme function in theme class file
+- Adjusted various CSS display properties
+
+1.0.2
+-----
+- Fix attribution docs 
+
+1.0.0
+-----
+- New Theme

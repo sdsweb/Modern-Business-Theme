@@ -4,13 +4,13 @@
  * Description:  Launch a modern responsive business theme for your client or custom project. Choose from custom page layouts, multiple columns and custom colors to showcase your business services. Modern Business is fast, lightweight, and efficient!
  * Author: Slocum Studio
  * Author URI: http://slocumthemes.com/
- * Version: 1.0.4
+ * Version: 1.1.4
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl.html
  * Tags: blue, green, orange, pink, purple, red, white, light, two-columns, left-sidebar, fluid-layout, custom-colors, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments
 
- * Modern Business Pro WordPress theme, Copyright (C) 2013 Slocum Studio
- * Modern Business Pro WordPress theme is licensed under the GPL.
+ * Modern Business WordPress theme, Copyright (C) 2013 Slocum Studio
+ * Modern Business WordPress theme is licensed under the GPL.
 
  * @see attribution.txt for more license information.
  */
@@ -374,7 +374,7 @@ article.content a:hover, .widget-fullbody a:hover, #post-author a:hover{
 	color: #dc291e;
 }
 
-body a.button{
+body a.button, .button {
 	background: #dc291e;
 	float: left;
 	color: #fff;
@@ -392,7 +392,7 @@ body a.button{
 	transition: all .3s ease-in-out;
 }
 
-body a.button:hover{
+body a.button:hover, .button:hover {
 	background: #ad2219;
 	-webkit-box-shadow: 0 0 2px 2px #898989;
 	box-shadow: 0 0 2px 2px #898989;
@@ -413,7 +413,7 @@ section.logo-box-full-width {
 }
 
 
-h1.site-title{
+.site-title{
 	font-size: 98px;
 	font-weight: 900;
 	line-height: 1em;
@@ -422,7 +422,8 @@ h1.site-title{
 	display: block;
 }
 
-h2.slogan{
+.slogan{
+	margin: 0.85em 0;
 	font-weight: 300;
 	/*margin-top: 0;*/
 	line-height: 1em;
@@ -645,6 +646,48 @@ nav .primary-nav li a:hover{
 }
 
 
+/* ------------------
+ * bbPress/BuddyPress
+   ------------------ */
+.bbp-breadcrumb p {
+	margin-top: 0;
+}
+
+#subscription-toggle {
+	margin-bottom: 1em;
+	float: right;
+}
+
+#bbpress-forums div.bbp-the-content-wrapper div.quicktags-toolbar {
+	overflow: auto;
+}
+
+#bbpress-forums div.bbp-the-content-wrapper input {
+	width: auto;
+	text-transform: none;
+}
+
+#bbpress-forums div.bbp-search-form {
+	margin-bottom: 1em;
+}
+
+#bbpress-forums #bbp-search-form #bbp_search {
+	width: 64%;
+	padding: 0.38em 0.30em;
+	display: inline-block;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+#bbp_search_submit {
+	padding: 0.38em 0.30em;
+	float: none;
+	display: inline-block;
+}
+
+#bbp_topic_submit {
+	cursor: pointer;
+}
 
 
 /*   -------------
@@ -747,8 +790,8 @@ article.post-content{
 }
 
 .sticky article.post-content {
-	width: auto;
-	padding: 1em;
+	width: 94%;
+	padding: 1em 3%;
 	background: #fff6f5;
 }
 
@@ -2108,7 +2151,7 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 
 
 
-	h1.site-title{
+	.site-title{
 		font-size: 42px;
 		font-weight: 900;
 		line-height: 1em;
@@ -2117,7 +2160,7 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 		display: block;
 	}
 
-	h2.slogan{
+	.slogan{
 		font-weight: 300;
 		margin-top: 0.5em;
 		line-height: 1em;
@@ -2523,8 +2566,8 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 
 @media only screen and (max-width : 680px){
 
-	article.blog-content{
-		width:100%;
+	article.blog-content, .page-content .content {
+		width: 100%;
 		float: left;
 	}
 
