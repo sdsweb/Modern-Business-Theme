@@ -1,0 +1,519 @@
+.wp-caption, .gallery-caption {
+	background: #eee;
+	border: 1px solid #ccc;
+}
+
+body{
+	background: #fff;
+	color: #363636;
+}
+
+nav.nav-container{
+	background: #000;
+}
+
+footer#footer{
+	background: #000;
+	color: #fff;
+}
+
+a{
+	color: #898989;
+}
+
+article.content a:hover, .widget-fullbody a:hover, #post-author a:hover{
+	color: #898989;
+}
+
+body a.button, .button {
+	background: #898989;
+	color: #fff;
+}
+
+body a.button:hover, .button:hover {
+	background: #464646;
+	-webkit-box-shadow: 0 0 2px 2px #898989;
+	box-shadow: 0 0 2px 2px #898989;
+}
+
+nav .top-nav {
+	background: #000;
+}
+
+nav .top-nav li a{
+	color: #fff;
+}
+
+nav ul.top-nav li:hover > a, nav ul.top-nav li a:hover{
+	color: #898989;
+}
+
+nav ul.top-nav li a:active{
+	background: #363636;
+}
+
+nav .top-nav li ul.sub-menu {
+	background: #000;
+}
+
+nav .primary-nav{
+	background: #898989;
+}
+
+nav .primary-nav li a{
+	color: #fff;
+}
+
+nav ul.primary-nav li:hover > a, nav ul.primary-nav li a:hover {
+	background: #464646;
+}
+
+nav ul.primary-nav li a:active {
+	background: #000;
+}
+
+nav .primary-nav li ul.sub-menu, .primary-nav-container li ul.children {
+	background: #464646;
+}
+
+h1.post-title a, h2.post-title a{
+	color: #000;
+}
+
+.blocks{
+	border-bottom: 1px solid #ccc;
+}
+
+.blocks img{
+	border-bottom: 6px solid #000;
+}
+
+.blocks img:hover{
+	border-bottom: 6px solid #898989;
+}
+
+section.post{
+	background: #fff;
+}
+
+figure.author-avatar{
+	border: 1px solid #ccc;
+}
+
+article.post-content{
+	background: #fff;
+}
+
+.sticky article.post-content {
+	background: #fafafa;
+}
+
+h1.post-title a:hover,
+h2.post-title a:hover{
+	color: #898989;
+}
+
+figure.post-image a:hover img{
+	border-bottom: 6px solid #898989;
+}
+
+section.post a.post-button, .post-edit-link, .button {
+	background: #898989;
+	color: #fff;
+	border-top: 1px solid #ccc;
+
+}
+
+section.post a.post-button:hover, section.widget #searchform input.submit:hover,
+section.widget form.register input[type=submit]:hover, .widget .social-media-icons a:hover,
+ul.page-numbers li a.page-numbers:hover, section.post a.post-edit-link:hover, .button:hover {
+	background: #464646;
+	color: #fff;
+}
+
+section.post a.post-button:active, section.widget #searchform input.submit:active,
+section.widget form.register input[type=submit]:active, .widget .social-media-icons a:active,
+ul.page-numbers li a.page-numbers:active, section.post a.post-edit-link:active, .button:hover {
+	background: #000;
+}
+
+footer.pagination{
+	border: 1px solid #ccc;
+}
+
+ul.page-numbers li a.page-numbers, ul.page-numbers li span.current{
+	border-right: 1px solid #ccc;
+}
+
+section.post-meta p {
+	border-top: 1px solid #ccc;
+
+}
+
+.post-navigation{
+	border-top: 1px solid #ccc;
+}
+
+.next-posts a:hover, .previous-posts a:hover{
+	text-decoration: underline;
+	color: #fff;
+}
+
+#post-author {
+	background: #fff;
+	border: 1px solid;
+	border-color: #ccc;
+}
+
+header.author-header{
+	border-bottom: 1px solid #ccc;
+}
+
+.comments-container {
+	border-bottom: 1px solid #ccc;
+}
+
+article.content .comments-area .comments-title-container h5.comments-title, article.full-width-content .comments-area .comments-title-container h5.comments-title {
+	background: #fff;
+}
+
+article.content ol.comment-list > li article, ol.comment-list > li article, ol.children > li article {
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+#comments ol.comment-list li article.bypostauthor {
+	background: #f6f6f6;
+	border-color: #ccc;
+}
+
+ol.comment-list > li:nth-child(even) article.comment {
+	background: #fff;
+}
+
+.comment-author {
+	border-bottom: 1px solid #ccc;
+}
+
+.comment-author .comment-meta a {
+	color: #999;
+}
+
+#respond {
+	border: 1px solid #ccc;
+}
+
+#respond .required {
+	color: #900;
+}
+
+#respond input, #respond textarea {
+	background: #f6f6f6;
+	color: #333;
+	border: 1px solid #ccc;
+}
+
+#respond input[type="submit"] {
+	color: #fff;
+	background: #898989;
+}
+
+#respond input[type="submit"]:hover {
+	background: #464646;
+}
+
+#respond input[type="submit"]:active {
+	background: #000;
+}
+
+#respond .form-allowed-tags {
+	border: 1px dashed #ccc;
+}
+
+table th, table td {
+	border: 1px solid #ccc;
+}
+
+table th {
+	background: #f7f7f7;
+}
+
+article.content input, article.content textarea,
+article.full-content input, article.full-content textarea {
+	padding: 2%;
+	background: #fefefe;
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+article.content input[type="reset"], article.full-content input[type="reset"],
+article.content input[type="submit"], article.full-content input[type="submit"],
+input[type="reset"], input[type="submit"] {
+	color: #fff;
+	background: #898989;
+}
+
+article.content input[type="reset"]:hover, article.full-content input[type="reset"]:hover,
+article.content input[type="submit"]:hover, article.full-content input[type="submit"]:hover {
+	background: #464646;
+}
+article.content input[type="reset"]:active, article.full-content input[type="reset"]:active,
+article.content input[type="submit"]:active, article.full-content input[type="submit"]:active {
+	background: #000;
+}
+
+section.widget h3.widget-title{
+	border-bottom: 1px solid #ccc;
+}
+
+.mb-address-widget .mb-address {
+	border-left: 6px solid #000;
+}
+
+footer .mb-address-widget .mb-address {
+	border-color: #fff;
+}
+
+section.mb-cta-widget, .footer-widgets-container section.mb-cta-widget {
+	color: #fff;
+	background: #898989;
+}
+
+section.mb-cta-widget:hover{
+	-webkit-box-shadow: 0 0 2px 2px #898989;
+	box-shadow: 0 0 2px 2px #898989;
+}
+
+section.mb-cta-widget a, article.content section.mb-cta-widget a {
+	color: #000;
+	background: #898989;
+}
+
+section.mb-cta-widget a:hover, article.content section.mb-cta-widget a:hover {
+	background: #fff;
+}
+
+section.widget #searchform input {
+	background: #efebeb;
+}
+
+section.widget #searchform input.submit {
+	color: #fff;
+	background: #898989;
+}
+
+section.widget table#wp-calendar thead {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+section.widget table#wp-calendar tbody{
+	border-bottom: 1px solid #ccc;
+}
+
+section.widget form.register input {
+	color: #555;
+	background: #fff;
+	border-color: #ccc;
+	border-color: rgba(0, 0, 0, .15);
+}
+
+section.widget form.register input[type=submit] {
+	color: #fff;
+	background: #898989;
+}
+
+.widget .social-media-icons a{
+	color: #fff;
+	background: #898989;
+	border: 1px solid #ccc;
+}
+
+footer section.footer-widget{
+	background: #000;
+	color: #fff;
+}
+
+footer.copyright{
+	color: #fff;
+}
+
+footer.copyright a{
+	color: #fff;
+}
+
+footer.copyright a:hover{
+	color: #898989;
+}
+
+footer section.footer-widget .social-media-icons a {
+	color: #fff;
+	background: #898989;
+	border: 1px solid #ccc;
+}
+
+footer section.footer-widget .social-media-icons a:hover {
+	background: #464646;
+}
+
+footer section.footer-widget .social-media-icons a:active {
+	background: #000;
+}
+
+.mc-gravity, .mc_gravity, .mc-newsletter, .mc_newsletter,
+.mc-gravity_wrapper, .mc_gravity_wrapper, .mc-newsletter_wrapper, .mc_newsletter_wrapper {
+	border: 1px solid #ccc;
+}
+
+.mc-gravity .gform_heading, .mc_gravity .gform_heading, .mc-newsletter .gform_heading, .mc_newsletter .gform_heading,
+.mc-gravity_wrapper .gform_heading, .mc_gravity_wrapper .gform_heading, .mc-newsletter_wrapper .gform_heading, .mc_newsletter_wrapper .gform_heading {
+	background: #898989;
+	color: #fff;
+}
+
+.mc-gravity .gform_fields .gfield_error input, .mc_gravity .gform_fields .gfield_error input,
+.mc-newsletter .gform_fields .gfield_error input, .mc_newsletter .gform_fields .gfield_error input,
+.mc-gravity_wrapper .gform_fields .gfield_error input, .mc_gravity_wrapper .gform_fields .gfield_error input,
+.mc-newsletter_wrapper .gform_fields .gfield_error input, .mc_newsletter_wrapper .gform_fields .gfield_error input {
+	background: #fafafa;
+}
+
+/* Placeholder color */
+.mc-gravity .gform_fields input::-webkit-input-placeholder, .mc_gravity .gform_fields input::-webkit-input-placeholder,
+.mc-newsletter .gform_fields input::-webkit-input-placeholder, .mc_newsletter .gform_fields input::-webkit-input-placeholder,
+.mc-gravity_wrapper .gform_fields input::-webkit-input-placeholder, .mc_gravity_wrapper .gform_fields input::-webkit-input-placeholder,
+.mc-newsletter_wrapper .gform_fields input::-webkit-input-placeholder, .mc_newsletter_wrapper .gform_fields input::-webkit-input-placeholder {
+	color: #aaa;
+}
+
+.mc-gravity .gform_fields input::-moz-placeholder, .mc_gravity .gform_fields input::-moz-placeholder,
+.mc-newsletter .gform_fields input::-moz-placeholder, .mc_newsletter .gform_fields input::-moz-placeholder,
+.mc-gravity_wrapper .gform_fields input::-moz-placeholder, .mc_gravity_wrapper .gform_fields input::-moz-placeholder,
+.mc-newsletter_wrapper .gform_fields input::-moz-placeholder, .mc_newsletter_wrapper .gform_fields input::-moz-placeholder {
+	color: #aaa;
+}
+
+.mc-gravity .gform_fields input:-ms-input-placeholder, .mc_gravity .gform_fields input:-ms-input-placeholder,
+.mc-newsletter .gform_fields input:-ms-input-placeholder, .mc_newsletter .gform_fields input:-ms-input-placeholder,
+.mc-gravity_wrapper .gform_fields input:-ms-input-placeholder, .mc_gravity_wrapper .gform_fields input:-ms-input-placeholder,
+.mc-newsletter_wrapper .gform_fields input:-ms-input-placeholder, .mc_newsletter_wrapper .gform_fields input:-ms-input-placeholder {
+	color: #aaa;
+}
+
+.mc-gravity-confirmation, .mc_gravity-confirmation, .mc-newsletter-confirmation, .mc_newsletter-confirmation {
+	color: #fff;
+	background: #898989;
+}
+
+@media only screen and (max-width : 740px) {
+
+.blocks-3{
+	border-bottom: 1px solid #ccc;
+}
+
+h1.post-title a, h1.post-title,
+h2.post-title a, h2.post-title{
+	color: #000;
+}
+
+.nav-button, .mobile-nav-button {
+	background: #898989;
+}
+
+.nav-button{
+		background: #898989 url(images/menu-icon-large.png) center center no-repeat;
+		border: 1px solid #cfd3d5;
+}
+
+.mobile-nav-button {
+		color: #fff;
+}
+
+.nav-button:hover, .mobile-nav-button:hover {
+		background: #464646 url(images/menu-icon-large.png) center center no-repeat;
+}
+
+.mobile-nav-button:hover {
+		background: #464646;
+}
+
+.mobile-nav-button.open {
+		background: #898989;
+}
+
+nav .mobile-nav {
+}
+
+nav .mobile-nav li.menu-label {
+	color: #666;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+nav .mobile-nav li.menu-label:hover {
+		background: #fff;
+}
+
+nav ul.top-nav li a, nav .mobile-nav li a {
+		border-bottom: 1px solid rgba(0,0,0,.2);
+		border-top: 1px solid rgba(255,255,255,.1);
+}
+
+nav .mobile-nav > li {
+	background: #898989;
+}
+
+nav .mobile-nav > li a {
+	color: #fff;
+}
+
+nav .mobile-nav li li {
+		background: #464646;
+}
+
+nav .mobile-nav li li a, nav .mobile-nav > li:hover a {
+		color: #fff;
+}
+
+nav .mobile-nav > li:hover {
+		background: #464646;
+}
+
+nav ul.top-nav li a:hover {
+		background-color: rgba(0,0,0,.5);
+}
+
+nav ul.top-nav > li:first-child {
+		border-top: 1px solid rgba(0,0,0,.2);
+}
+
+nav.top-nav.open, nav.top-nav.open > ul, nav .mobile-nav.open {
+		background: #fff;
+}
+
+nav ul.top-nav > li:hover a {
+	color: #fff;
+}
+
+nav ul.top-nav li ul, nav .primary-nav li ul {
+	background: rgba(0,0,0,.5);
+}
+
+nav ul.top-nav.open li ul.sub-menu a {
+	color: #fff;
+}
+
+}
+
+
+@media only screen and (max-width : 480px) {
+
+aside.header-cta-container{
+	border-top: 6px solid #000;
+}
+
+}
+
