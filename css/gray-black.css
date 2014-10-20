@@ -409,6 +409,15 @@ footer section.footer-widget .social-media-icons a:active {
 	background: #898989;
 }
 
+
+/* WooCommerce */
+.woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce #content nav.woocommerce-pagination ul li a:hover, .woocommerce #content nav.woocommerce-pagination ul li a:focus,
+.woocommerce-page nav.woocommerce-pagination ul li a:hover, .woocommerce-page #content nav.woocommerce-pagination ul li a:hover,
+.woocommerce-page #content nav.woocommerce-pagination ul li a:focus {
+	background: #464646 !important;
+}
+
 @media only screen and (max-width : 740px) {
 
 .blocks-3{

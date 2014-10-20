@@ -1,10 +1,21 @@
 ==========================================
 Theme: Modern Business
 Author: Slocum Themes/Slocum Design Studio
-Author URI: http://slocumthemes.com
-Current Version: 1.1.4
+Author URI: http://slocumthemes.com/
+Current Version: 1.1.5
 ==========================================
 
+
+1.1.5 // October 20 2014
+------------------------
+- Updated to latest version of SDS Core
+- Removed margin on Header Call to Action Sidebar
+- Added CSS classes on sidebar containers for better CSS targeting (added "widgets" and "no-widgets" classes)
+- Adjusted CSS display properties on various elements
+- Removed erroneous CSS selector
+- Added WooCommerce support
+- Adjusted "mc-gravity" support to allow for multiple CSS classes
+- Updated POT file
 
 1.1.4 // July 02 2014
 ---------------------
