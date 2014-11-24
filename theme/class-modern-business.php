@@ -3,7 +3,7 @@
  * This class manages all functionality with our Modern Business theme.
  */
 class ModernBusiness {
-	const MB_VERSION = '1.1.5';
+	const MB_VERSION = '1.1.6';
 
 	private static $instance; // Keep track of the instance
 
@@ -25,8 +25,9 @@ class ModernBusiness {
 	function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ), 20 ); // Register image sizes
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) ); // Add Meta Boxes
-		//add_action( 'pre_get_posts', array( $this, 'pre_get_posts' ) ); // Used to enqueue editor styles based on post type
+		add_action( 'pre_get_posts', array( $this, 'pre_get_posts' ) ); // Used to enqueue editor styles based on post type
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) ); // Register widgets
+		add_action( 'wp_head', array( $this, 'wp_head' ), 1 ); // Add <meta> tags to <head> section
 		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) ); // Enqueue all stylesheets (Main Stylesheet, Fonts, etc...)
 		add_filter( 'the_content_more_link', array( $this, 'the_content_more_link' ) ); // Remove default more link
 		add_action( 'wp_footer', array( $this, 'wp_footer' ) ); // Responsive navigation functionality
@@ -148,6 +149,8 @@ class ModernBusiness {
 	function pre_get_posts() {
 		global $sds_theme_options, $post;
 
+		$protocol = is_ssl() ? 'https' : 'http';
+
 		// Admin only and if we have a post
 		if ( is_admin() && ! empty( $post ) ) {
 			add_editor_style( 'css/editor-style.css' );
@@ -157,6 +160,11 @@ class ModernBusiness {
 				$color_schemes = sds_color_schemes();
 				add_editor_style( 'css/' . $color_schemes[$sds_theme_options['color_scheme']]['stylesheet'] );
 			}
+
+			// Droid Sans & Bitter Web Fonts (include only if a web font is not selected in Theme Options)
+			if ( ! function_exists( 'sds_web_fonts' ) || empty( $sds_theme_options['web_font'] ) )
+				add_editor_style( str_replace( ',', '%2C', $protocol . '://fonts.googleapis.com/css?family=Droid+Sans|Bitter:400,700,400italic' ) ); // Google WebFonts (Droid Sans & Bitter)
+
 
 			// Fetch page template if any on Pages only
 			if ( $post->post_type === 'page' )
@@ -180,6 +188,16 @@ class ModernBusiness {
 
 		// Register the Modern Business CTA Widget (/includes/widget-call-to-action.php)
 		register_widget( 'MB_CTA_Widget' );
+	}
+
+	/**
+	 * This function adds <meta> tags to the <head> element.
+	 */
+	function wp_head() {
+		?>
+		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<?php
 	}
 
 	/**
@@ -345,12 +363,16 @@ class ModernBusiness {
 	 * .mc-gravity, .mc_gravity, .mc-newsletter, .mc_newsletter classes
 	 */
 	function gform_field_input( $input, $field, $value, $lead_id, $form_id ) {
-		$form_meta = RGFormsModel::get_form_meta( $form_id );
-		$form_css_classes = explode( ' ', $form_meta['cssClass'] );
+		$form_meta = RGFormsModel::get_form_meta( $form_id ); // Get form meta
 
-		// Ensure the current form has one of our supported classes and alter the field accordingly if we're not on admin
-		if ( isset( $form['cssClass'] ) && ! is_admin() && in_array( $form_css_classes, array( 'mc-gravity', 'mc_gravity', 'mc-newsletter', 'mc_newsletter' ) ) )
-			$input = '<div class="ginput_container"><input name="input_' . $field['id'] . '" id="input_' . $form_id . '_' . $field['id'] . '" type="text" value="" class="large" placeholder="' . $field['label'] . '" /></div>';
+		// Ensure we have at least one CSS class
+		if ( isset( $form_meta['cssClass'] ) ) {
+			$form_css_classes = explode( ' ', $form_meta['cssClass'] );
+
+			// Ensure the current form has one of our supported classes and alter the field accordingly if we're not on admin
+			if ( ! is_admin() && array_intersect( $form_css_classes, array( 'mc-gravity', 'mc_gravity', 'mc-newsletter', 'mc_newsletter' ) ) )
+				$input = '<div class="ginput_container"><input name="input_' . $field['id'] . '" id="input_' . $form_id . '_' . $field['id'] . '" type="text" value="" class="large" placeholder="' . $field['label'] . '" /></div>';
+		}
 
 		return $input;
 	}
@@ -360,11 +382,14 @@ class ModernBusiness {
 	 * .mc-gravity, .mc_gravity, .mc-newsletter, .mc_newsletter classes
 	 */
 	function gform_confirmation( $confirmation, $form, $lead, $ajax ) {
-		$form_css_classes = explode( ' ', $form['cssClass'] );
+		// Ensure we have at least one CSS class
+		if ( isset( $form['cssClass'] ) ) {
+			$form_css_classes = explode( ' ', $form['cssClass'] );
 
-		// Confirmation message is set and form has one of our supported classes (alter the confirmation accordingly)
-		if ( isset( $form['cssClass'] ) && $form['confirmation']['type'] === 'message' && in_array( $form_css_classes, array( 'mc-gravity', 'mc_gravity', 'mc-newsletter', 'mc_newsletter' ) ) )
-			$confirmation = '<section class="mc-gravity-confirmation mc_gravity-confirmation mc-newsletter-confirmation mc_newsletter-confirmation">' . $confirmation . '</section>';
+			// Confirmation message is set and form has one of our supported classes (alter the confirmation accordingly)
+			if ( $form['confirmation']['type'] === 'message' && array_intersect( $form_css_classes, array( 'mc-gravity', 'mc_gravity', 'mc-newsletter', 'mc_newsletter' ) ) )
+				$confirmation = '<div class="mc-gravity-confirmation mc_gravity-confirmation mc-newsletter-confirmation mc_newsletter-confirmation">' . $confirmation . '</div>';
+		}
 
 		return $confirmation;
 	}

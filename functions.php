@@ -7,7 +7,7 @@
  * Load the theme function files (options panel, theme functions, widgets, etc...).
  */
 
-include_once get_template_directory() . '/includes/ModernBusiness.php'; // ModernBusiness Class (main functionality, actions/filters)
+include_once get_template_directory() . '/theme/class-modern-business.php'; // ModernBusiness Class (main functionality, actions/filters)
 
 include_once get_template_directory() . '/includes/class-tgm-plugin-activation.php'; // TGM Activation
 
@@ -16,9 +16,9 @@ include_once get_template_directory() . '/includes/theme-functions.php'; // SDS 
 include_once get_template_directory() . '/includes/class-customize-us-control.php'; // Customize Controller
 
 include_once get_template_directory() . '/includes/widget-social-media.php'; // SDS Social Media Widget
-include_once get_template_directory() . '/includes/widget-address.php'; // Modern Business Address Widget
-include_once get_template_directory() . '/includes/widget-hero.php'; // Modern Business Hero Widget
-include_once get_template_directory() . '/includes/widget-call-to-action.php'; // Modern Business Call to Action Widget
+include_once get_template_directory() . '/theme/widgets/class-widget-address.php'; // Modern Business Address Widget
+include_once get_template_directory() . '/theme/widgets/class-widget-hero.php'; // Modern Business Hero Widget
+include_once get_template_directory() . '/theme/widgets/class-widget-call-to-action.php'; // Modern Business Call to Action Widget
 
 
 /**
@@ -175,7 +175,7 @@ if ( ! function_exists( 'mb_body_class' ) ) {
  * This function adds the custom Theme Customizer styles to the <head> tag.
  */
 if ( ! function_exists( 'mb_wp_head' ) ) {
-	add_filter( 'wp_head', 'mb_wp_head', 20 );
+	add_action( 'wp_head', 'mb_wp_head', 20 );
 
 	function mb_wp_head() {
 		$sds_theme_options_instance = SDS_Theme_Options_Instance();

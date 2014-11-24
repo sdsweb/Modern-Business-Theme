@@ -9,7 +9,7 @@
 					</section>
 				</section>
 
-				<section class="copyright-area">
+				<section class="copyright-area <?php echo ( is_active_sidebar( 'copyright-area-sidebar' ) ) ? 'widgets' : 'no-widgets'; ?>">
 					<?php sds_copyright_area_sidebar(); ?>
 				</section>
 

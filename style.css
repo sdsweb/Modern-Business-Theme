@@ -1,10 +1,10 @@
 /**
  * Theme Name: Modern Business
  * Theme URI: http://slocumthemes.com/wordpress-themes/modern-business-free/
- * Description: Launch a modern responsive business theme for your client or custom project. Choose from custom page layouts, multiple columns and custom colors to showcase your business services. Modern Business is fast, lightweight, and efficient!
+ * Description: Launch a modern responsive business theme for your client or custom project. Choose from custom page layouts, multiple columns and custom colors to showcase your business services. Modern Business is fast, lightweight, and efficient! Now supports live front-end text widget editing via <a href="http://wordpress.org/plugins/note/" target="_blank">Note</a>. More info - <a href="http://wordpress.org/plugins/note/" target="_blank">http://wordpress.org/plugins/note/</a>.
  * Author: Slocum Studio
  * Author URI: http://slocumthemes.com/
- * Version: 1.1.5
+ * Version: 1.1.6
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl.html
  * Tags: blue, green, orange, pink, purple, red, white, light, two-columns, left-sidebar, fluid-layout, custom-colors, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments
@@ -398,6 +398,10 @@ body a.button:hover, .button:hover {
 	box-shadow: 0 0 2px 2px #898989;
 }
 
+.button {
+	margin-top: 0;
+}
+
 /*   -------------
 	  Logo Area
 	 -------------  */
@@ -590,7 +594,7 @@ nav .primary-nav li:first-child a{
 }
 
 nav ul.primary-nav li:hover > a, nav ul.primary-nav li a:hover {
-	background: #921912;
+	background: #ad2219;
 }
 
 nav ul.primary-nav li a:active {
@@ -1257,7 +1261,8 @@ a#cancel-comment-reply-link {
 /* -----------------
    POST/PAGE TYPOGRAPHY
    -----------------*/
-article.content h1, article.full-content h1, article.content h1.post-title {
+article.content h1, article.full-content h1,
+article.content h1.post-title, article.content h2.post-title {
 	margin: 0.75em 0;
 	font-size: 44px;
 	line-height: 1em;
@@ -1399,8 +1404,12 @@ article.content input[type="submit"]:active, article.full-content input[type="su
 .front-page-sidebar {
 	/*margin-top: .85em;*/
 }
+.front-page-sidebar section.widget.mb-cta-widget {
+	margin-top: 30px;
+}
 
-.front-page-sidebar section.widget h3.widget-title {
+.front-page-sidebar section.widget h3.widget-title,
+.cols-1 section.widget h3.widget-title {
 	margin-bottom: 22px;
 	padding-bottom: 20px;
 	text-align: center;
@@ -1953,6 +1962,7 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 .mc-newsletter li.gfield.gfield_error.gfield_contains_required div.ginput_container, .mc_newsletter li.gfield.gfield_error.gfield_contains_required div.ginput_container,
 .mc-gravity_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .mc_gravity_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container,
 .mc-newsletter_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .mc_newsletter_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container {
+	max-width: 100%;
 	margin: 0 !important;
 }
 
@@ -1998,10 +2008,10 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 }
 
 .mc-gravity-confirmation, .mc_gravity-confirmation, .mc-newsletter-confirmation, .mc_newsletter-confirmation {
-	width: 98%;
+	width: 96%;
 	padding: 2%;
 	color: #fff;
-	background: #fff;
+	background: #dc291e;
 }
 
 .mc-gravity-confirmation .gform_confirmation_wrapper, .mc_gravity-confirmation .gform_confirmation_wrapper,
@@ -2107,6 +2117,10 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 
 .woocommerce div.product form.cart .button, .woocommerce #content div.product form.cart .button, .woocommerce-page div.product form.cart .button, .woocommerce-page #content div.product form.cart .button {
 	margin-top: 1em !important;
+}
+
+.woocommerce.single-product div.product form.cart .button {
+	margin-top: 0 !important;
 }
 
 .woocommerce-message, .woocommerce-error, .woocommerce-info {
