@@ -8,7 +8,7 @@
 	<section id="post-<?php the_ID(); ?>" <?php post_class( 'post cf' ); ?>>
 		<article class="post-content">
 			<section class="post-title-wrap cf <?php echo ( has_post_thumbnail() ) ? 'post-title-wrap-featured-image' : 'post-title-wrap-no-image'; ?>">
-				<p class="post-date"><?php the_time( 'F j, Y' ); ?></p>
+				<p class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></p>
 				<h1 class="post-title page-title"><?php the_title(); ?></h1>
 			</section>
 
