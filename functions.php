@@ -7,7 +7,7 @@
  * Load the theme function files (options panel, theme functions, widgets, etc...).
  */
 
-include_once get_template_directory() . '/includes/ModernBusiness.php'; // ModernBusiness Class (main functionality, actions/filters)
+include_once get_template_directory() . '/theme/class-modern-business.php'; // ModernBusiness Class (main functionality, actions/filters)
 
 include_once get_template_directory() . '/includes/class-tgm-plugin-activation.php'; // TGM Activation
 
@@ -16,9 +16,9 @@ include_once get_template_directory() . '/includes/theme-functions.php'; // SDS 
 include_once get_template_directory() . '/includes/class-customize-us-control.php'; // Customize Controller
 
 include_once get_template_directory() . '/includes/widget-social-media.php'; // SDS Social Media Widget
-include_once get_template_directory() . '/includes/widget-address.php'; // Modern Business Address Widget
-include_once get_template_directory() . '/includes/widget-hero.php'; // Modern Business Hero Widget
-include_once get_template_directory() . '/includes/widget-call-to-action.php'; // Modern Business Call to Action Widget
+include_once get_template_directory() . '/theme/widgets/class-widget-address.php'; // Modern Business Address Widget
+include_once get_template_directory() . '/theme/widgets/class-widget-hero.php'; // Modern Business Hero Widget
+include_once get_template_directory() . '/theme/widgets/class-widget-call-to-action.php'; // Modern Business Call to Action Widget
 
 
 /**
@@ -175,7 +175,7 @@ if ( ! function_exists( 'mb_body_class' ) ) {
  * This function adds the custom Theme Customizer styles to the <head> tag.
  */
 if ( ! function_exists( 'mb_wp_head' ) ) {
-	add_filter( 'wp_head', 'mb_wp_head', 20 );
+	add_action( 'wp_head', 'mb_wp_head', 20 );
 
 	function mb_wp_head() {
 		$sds_theme_options_instance = SDS_Theme_Options_Instance();
@@ -195,7 +195,7 @@ if ( ! function_exists( 'sds_theme_options_ads' ) ) {
 	add_action( 'sds_theme_options_ads', 'sds_theme_options_ads' );
 
 	function sds_theme_options_ads() {
-		?>
+	?>
 		<div class="sds-theme-options-ad">
 			<a href="<?php echo esc_url( sds_get_pro_link( 'theme-options-ad' ) ); ?>" target="_blank" class="sds-theme-options-upgrade-ad">
 				<h3><?php _e( 'Upgrade to Modern Business Pro!', 'modern-business' ); ?></h3>
@@ -209,6 +209,19 @@ if ( ! function_exists( 'sds_theme_options_ads' ) ) {
 				</ul>
 
 				<span class="sds-theme-options-btn-green"><?php _e( 'Upgrade Now!', 'modern-business' ); ?></span>
+			</a>
+		</div>
+
+		<div class="sds-theme-options-ad">
+			<a href="<?php echo esc_url( 'http://conductorplugin.com/slocum-themes/' ); ?>" target="_blank" class="sds-theme-options-upgrade-ad sds-theme-options-upgrade-ad-dark-gray">
+				<h3><?php _e( 'Introducing Conductor Plugin', 'modern-business' ); ?></h3>
+				<ul>
+					<li><?php _e( 'Custom Layouts', 'modern-business' ); ?></li>
+					<li><?php _e( 'Custom Content Displays', 'modern-business' ); ?></li>
+					<li><?php _e( 'No Code Required!', 'modern-business' ); ?></li>
+				</ul>
+
+				<span class="sds-theme-options-btn-yellow"><?php _e( 'Get Conductor!', 'modern-business' ); ?></span>
 			</a>
 		</div>
 	<?php
@@ -281,7 +294,7 @@ if ( ! function_exists( 'sds_copyright_branding' ) ) {
 	add_filter( 'sds_copyright_branding', 'sds_copyright_branding', 10, 2 );
 
 	function sds_copyright_branding( $text, $theme_name ) {
-		return sprintf( __( '<a href="%1$s">%2$s by Slocum Studio</a>', 'modern-business' ), esc_url( 'http://slocumthemes.com/wordpress-themes/modern-business/' ), $theme_name );
+		return sprintf( __( '<a href="%1$s">%2$s by Slocum Studio</a>', 'modern-business' ), esc_url( 'https://slocumthemes.com/wordpress-themes/modern-business-free/' ), $theme_name );
 	}
 }
 

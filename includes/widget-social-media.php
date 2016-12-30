@@ -17,7 +17,8 @@ if ( ! class_exists( 'SDS_Social_Media_Widget' ) ) {
 		 */
 		function __construct() {
 			$widget_ops = array( 'classname' => 'widget-sds-social-media sds-social-media-widget', 'description' => 'Display social media icons linking to your networks specified in Theme Options.' );
-			$this->WP_Widget( 'sds-social-media-widget', 'Social Media Widget', $widget_ops );
+
+			parent::__construct( 'sds-social-media-widget', 'Social Media Widget', $widget_ops );
 		}
 
 		/**

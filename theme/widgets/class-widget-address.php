@@ -32,7 +32,8 @@ if ( ! class_exists( 'MB_Address_Widget' ) ) {
 				'classname' => 'widget-mb-address mb-address-widget',
 				'description' => 'Display a formatted address block.'
 			);
-			$this->WP_Widget( 'mb-address-widget', 'Modern Business - Address', $widget_options );
+
+			parent::__construct( 'mb-address-widget', 'Modern Business - Address', $widget_options );
 		}
 
 		/**
@@ -64,7 +65,7 @@ if ( ! class_exists( 'MB_Address_Widget' ) ) {
 				<?php // Filter Content (wpautop) ?>
 				<input id="<?php echo $this->get_field_id( 'filter' ); ?>" name="<?php echo $this->get_field_name( 'filter' ); ?>" type="checkbox" <?php checked( isset( $instance['filter'] ) ? $instance['filter'] : false ); ?> />
 				&nbsp;
-				<label for="<?php echo $this->get_field_id( 'filter' ); ?>"><?php _e( 'Automatically add paragraphs', 'modern-busines' ); ?></label>
+				<label for="<?php echo $this->get_field_id( 'filter' ); ?>"><?php _e( 'Automatically add paragraphs', 'modern-business' ); ?></label>
 			</p>
 		<?php
 		}

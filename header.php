@@ -5,10 +5,6 @@
 <!--[if IE 9 ]><html class="ie ie9"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html><!--<![endif]-->
 	<head>
-		<title><?php wp_title( '| ', true, 'right' ); ?></title>
-		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-			
 		<?php wp_head(); ?>
 	</head>
 
@@ -41,7 +37,7 @@
 				</section>
 
 				<!--  Header Call to Action -->
-				<aside class="header-cta-container header-call-to-action">
+				<aside class="header-cta-container header-call-to-action <?php echo ( is_active_sidebar( 'header-call-to-action-sidebar' ) ) ? 'widgets' : 'no-widgets'; ?>">
 					<?php sds_header_call_to_action_sidebar(); // Header CTA Sidebar ?>
 				</aside>
 
