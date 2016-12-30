@@ -1,15 +1,16 @@
 /**
  * Theme Name: Modern Business
- * Theme URI: http://slocumthemes.com/wordpress-themes/modern-business-free/
- * Description:  Launch a modern responsive business theme for your client or custom project. Choose from custom page layouts, multiple columns and custom colors to showcase your business services. Modern Business is fast, lightweight, and efficient!
+ * Theme URI: https://slocumthemes.com/wordpress-themes/modern-business-free/
+ * Description: Launch a modern responsive business theme for your client or custom project. Choose from custom page layouts, multiple columns and custom colors to showcase your business services. Modern Business is fast, lightweight, and efficient! Now supports live front-end text widget editing via <a href="http://wordpress.org/plugins/note/" target="_blank">Note</a>. More info - <a href="http://wordpress.org/plugins/note/" target="_blank">http://wordpress.org/plugins/note/</a>.
  * Author: Slocum Studio
- * Author URI: http://slocumthemes.com/
- * Version: 1.1.4
+ * Author URI: https://slocumthemes.com/
+ * Version: 1.2.0
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl.html
- * Tags: blue, green, orange, pink, purple, red, white, light, two-columns, left-sidebar, fluid-layout, custom-colors, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments
+ * Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news, photography, portfolio
+ * Text Domain: modern-business
 
- * Modern Business WordPress theme, Copyright (C) 2013 Slocum Studio
+ * Modern Business WordPress theme, Copyright (C) 2013-2015 Slocum Studio
  * Modern Business WordPress theme is licensed under the GPL.
 
  * @see attribution.txt for more license information.
@@ -170,6 +171,36 @@ a img.aligncenter {
 	padding: 0 4px 0;
 }
 
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
 
 
 /* -----------------
@@ -398,6 +429,10 @@ body a.button:hover, .button:hover {
 	box-shadow: 0 0 2px 2px #898989;
 }
 
+.button {
+	margin-top: 0;
+}
+
 /*   -------------
 	  Logo Area
 	 -------------  */
@@ -439,8 +474,11 @@ section.logo-box-full-width {
 aside.header-cta-container{
 	float: right;
 	width: 27.5%;
-	margin-top: 40px;
 	padding-left: 30px;
+}
+
+aside.header-cta-container.widgets {
+	margin-top: 40px;
 }
 
 /*   -------------
@@ -587,7 +625,7 @@ nav .primary-nav li:first-child a{
 }
 
 nav ul.primary-nav li:hover > a, nav ul.primary-nav li a:hover {
-	background: #921912;
+	background: #ad2219;
 }
 
 nav ul.primary-nav li a:active {
@@ -747,13 +785,8 @@ section.post{
 	margin-bottom: 40px;
 }
 
-article.blog-content section.post:first-of-type
-
-
 
 /* -----  Home Post Header  ------*/
-
-
 p.post-date, article.post-content p.post-date{
 	font-size: 16px;
 	margin-bottom: 10px;
@@ -1259,19 +1292,30 @@ a#cancel-comment-reply-link {
 /* -----------------
    POST/PAGE TYPOGRAPHY
    -----------------*/
-article.content h1, article.full-content h1{
+article.content h1, article.full-content h1,
+article.content h1.post-title, article.content h2.post-title {
 	margin: 0.75em 0;
 	font-size: 44px;
 	line-height: 1em;
 }
 
-article.content h2, article.full-content h2{
+.home.cols-3-m article.content h1.post-title,
+.page.cols-3-m article.content h1.post-title,
+article.content h1.post-title {
+	margin-top: 0.1em;
+}
+
+.single article.content h1.post-title {
+	margin-top: 0.75em;
+}
+
+article.content h2, article.full-content h2 {
 	margin: 0.65em 0;
 	font-size: 38px;
 	line-height: 1em;
 }
 
-article.content h3, article.full-content h3{
+article.content h3, article.full-content h3 {
 	margin: 0.5em 0;
 	font-size: 32px;
 }
@@ -1281,12 +1325,12 @@ article.content h4, article.full-content h4{
 	font-size: 24px;
 }
 
-article.content h5, article.full-content h5{
+article.content h5, article.full-content h5 {
 	margin: 0.25em 0;
 	font-size: 18px;
 }
 
-article.content h6, article.full-content h6{
+article.content h6, article.full-content h6 {
 	margin: 0.15em 0;
 	font-size: 16px;
 }
@@ -1391,8 +1435,12 @@ article.content input[type="submit"]:active, article.full-content input[type="su
 .front-page-sidebar {
 	/*margin-top: .85em;*/
 }
+.front-page-sidebar section.widget.mb-cta-widget {
+	margin-top: 30px;
+}
 
-.front-page-sidebar section.widget h3.widget-title {
+.front-page-sidebar section.widget h3.widget-title,
+.cols-1 section.widget h3.widget-title {
 	margin-bottom: 22px;
 	padding-bottom: 20px;
 	text-align: center;
@@ -1945,6 +1993,7 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 .mc-newsletter li.gfield.gfield_error.gfield_contains_required div.ginput_container, .mc_newsletter li.gfield.gfield_error.gfield_contains_required div.ginput_container,
 .mc-gravity_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .mc_gravity_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container,
 .mc-newsletter_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .mc_newsletter_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container {
+	max-width: 100%;
 	margin: 0 !important;
 }
 
@@ -1990,10 +2039,10 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 }
 
 .mc-gravity-confirmation, .mc_gravity-confirmation, .mc-newsletter-confirmation, .mc_newsletter-confirmation {
-	width: 98%;
+	width: 96%;
 	padding: 2%;
 	color: #fff;
-	background: #fff;
+	background: #dc291e;
 }
 
 .mc-gravity-confirmation .gform_confirmation_wrapper, .mc_gravity-confirmation .gform_confirmation_wrapper,
@@ -2002,9 +2051,137 @@ form.mc-gravity, form.mc_gravity, form.mc-newsletter, form.mc_newsletter {
 }
 
 
+/* WooCommerce */
+.woocommerce .woocommerce-breadcrumb, .woocommerce-page .woocommerce-breadcrumb {
+	margin-top: 1.5em !important;
+}
+
+.woocommerce div.product, .woocommerce #content div.product, .woocommerce-page div.product, .woocommerce-page #content div.product {
+	margin-top: 2em !important;
+}
+
+.woocommerce div.product div.images, .woocommerce #content div.product div.images, .woocommerce-page div.product div.images, .woocommerce-page #content div.product div.images {
+	width: 26.85% !important;
+}
+
+.woocommerce div.product div.summary, .woocommerce #content div.product div.summary, .woocommerce-page div.product div.summary, .woocommerce-page #content div.product div.summary {
+	width: 70.15% !important;
+}
+
+.woocommerce div.product span.price, .woocommerce div.product p.price, .woocommerce #content div.product span.price, .woocommerce #content div.product p.price, .woocommerce-page div.product span.price, .woocommerce-page div.product p.price, .woocommerce-page #content div.product span.price, .woocommerce-page #content div.product p.price {
+	font-weight: bold !important;
+}
+
+.woocommerce div.product div.images div.thumbnails a, .woocommerce #content div.product div.images div.thumbnails a, .woocommerce-page div.product div.images div.thumbnails a, .woocommerce-page #content div.product div.images div.thumbnails a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a, .woocommerce #content div.product .woocommerce-tabs ul.tabs li a, .woocommerce-page div.product .woocommerce-tabs ul.tabs li a, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li a {
+	border-bottom: none !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span, .woocommerce #content nav.woocommerce-pagination ul li a, .woocommerce #content nav.woocommerce-pagination ul li span, .woocommerce-page nav.woocommerce-pagination ul li a, .woocommerce-page nav.woocommerce-pagination ul li span, .woocommerce-page #content nav.woocommerce-pagination ul li a, .woocommerce-page #content nav.woocommerce-pagination ul li span {
+	padding: 15px 30px;
+}
+
+.woocommerce nav.woocommerce-pagination ul li:last-child a,
+.woocommerce nav.woocommerce-pagination ul li:last-child span,
+.woocommerce #content nav.woocommerce-pagination ul li:last-child a,
+.woocommerce #content nav.woocommerce-pagination ul li:last-child span,
+.woocommerce-page nav.woocommerce-pagination ul li:last-child a,
+.woocommerce-page nav.woocommerce-pagination ul li:last-child span,
+.woocommerce-page #content nav.woocommerce-pagination ul li:last-child a,
+.woocommerce-page #content nav.woocommerce-pagination ul li:last-child span {
+	border-right: none !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce #content nav.woocommerce-pagination ul li a:hover, .woocommerce #content nav.woocommerce-pagination ul li a:focus,
+.woocommerce-page nav.woocommerce-pagination ul li a:hover, .woocommerce-page #content nav.woocommerce-pagination ul li a:hover,
+.woocommerce-page #content nav.woocommerce-pagination ul li a:focus {
+	color: #fff !important;
+	background: #ad2219 !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:active, .woocommerce nav.woocommerce-pagination ul li a:active,
+.woocommerce #content nav.woocommerce-pagination ul li a:active, .woocommerce #content nav.woocommerce-pagination ul li a:active,
+.woocommerce-page nav.woocommerce-pagination ul li a:active, .woocommerce-page #content nav.woocommerce-pagination ul li a:active,
+.woocommerce-page #content nav.woocommerce-pagination ul li a:active {
+	color: #fff !important;
+	background: #000 !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce #content nav.woocommerce-pagination ul li span.current,
+.woocommerce-page nav.woocommerce-pagination ul li span.current,
+.woocommerce-page #content nav.woocommerce-pagination ul li span.current {
+	color: #000 !important;
+	background: transparent !important;
+}
 
 
+.woocommerce nav.woocommerce-pagination ul li a:active, .woocommerce nav.woocommerce-pagination ul li a:active, .woocommerce #content nav.woocommerce-pagination ul li a:active, .woocommerce #content nav.woocommerce-pagination ul li a:active, .woocommerce-page nav.woocommerce-pagination ul li a:active, .woocommerce-page nav.woocommerce-pagination ul li a:active, .woocommerce-page #content nav.woocommerce-pagination ul li a:active, .woocommerce-page #content nav.woocommerce-pagination ul li a:active {
+	color: #fff !important;
+}
 
+.woocommerce nav.woocommerce-pagination ul, .woocommerce #content nav.woocommerce-pagination ul, .woocommerce-page nav.woocommerce-pagination ul, .woocommerce-page #content nav.woocommerce-pagination ul {
+	border: 1px solid #ccc !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li, .woocommerce #content nav.woocommerce-pagination ul li, .woocommerce-page nav.woocommerce-pagination ul li, .woocommerce-page #content nav.woocommerce-pagination ul li,
+.woocommerce table.cart .product-thumbnail a, .woocommerce table.cart .product-remove a {
+	border: none !important;
+}
+
+.woocommerce .related ul.products li.product, .woocommerce .related ul li.product, .woocommerce .upsells.products ul.products li.product, .woocommerce .upsells.products ul li.product, .woocommerce-page .related ul.products li.product, .woocommerce-page .related ul li.product, .woocommerce-page .upsells.products ul.products li.product, .woocommerce-page .upsells.products ul li.product {
+	width: 30.80% !important;
+}
+
+.woocommerce div.product form.cart .variations td.label, .woocommerce #content div.product form.cart .variations td.label, .woocommerce-page div.product form.cart .variations td.label, .woocommerce-page #content div.product form.cart .variations td.label {
+	padding-left: 0.5em !important;
+}
+
+.woocommerce div.product form.cart .variations td.value, .woocommerce #content div.product form.cart .variations td.value, .woocommerce-page div.product form.cart .variations td.value, .woocommerce-page #content div.product form.cart .variations td.value {
+	padding: 0.5em !important;
+}
+
+.woocommerce div.product span.price ins, .woocommerce div.product p.price ins, .woocommerce #content div.product span.price ins, .woocommerce #content div.product p.price ins, .woocommerce-page div.product span.price ins, .woocommerce-page div.product p.price ins, .woocommerce-page #content div.product span.price ins, .woocommerce-page #content div.product p.price ins {
+	text-decoration: none !important;
+}
+
+.woocommerce div.product form.cart .button, .woocommerce #content div.product form.cart .button, .woocommerce-page div.product form.cart .button, .woocommerce-page #content div.product form.cart .button {
+	margin-top: 1em !important;
+}
+
+.woocommerce.single-product div.product form.cart .button {
+	margin-top: 0 !important;
+}
+
+.woocommerce-message, .woocommerce-error, .woocommerce-info {
+	margin: 2em 0 !important;
+}
+
+ul.woocommerce-error {
+	padding-left: 3.5em !important;
+}
+
+.woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce-page .cart .button, .woocommerce-page .cart input.button {
+	margin: 0.5em 0 !important;
+}
+
+.woocommerce .cart-collaterals .cart_totals table tr:first-child th, .woocommerce .cart-collaterals .cart_totals table tr:first-child td, .woocommerce-page .cart-collaterals .cart_totals table tr:first-child th, .woocommerce-page .cart-collaterals .cart_totals table tr:first-child td {
+	border-top: 1px solid #ddd !important;
+}
+
+.woocommerce .col2-set, .woocommerce-page .col2-set {
+	margin-top: 2em !important;
+}
+
+.woocommerce table.cart td.actions .coupon .input-text,
+.woocommerce-page table.cart td.actions .coupon .input-text {
+	margin-top: 14px;
+}
+
+.woocommerce table.cart a.remove, .woocommerce-page table.cart a.remove {
+	line-height: 0.75em;
+}
 
 
 @media only screen and (max-width : 1000px) {

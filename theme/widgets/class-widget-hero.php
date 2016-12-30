@@ -71,6 +71,7 @@ if ( ! class_exists( 'MB_Hero_Widget' ) ) {
 				<?php // Filter Left Content (wpautop) ?>
 				<input id="<?php echo $this->get_field_id( 'filter-left' ); ?>" name="<?php echo $this->get_field_name( 'filter-left' ); ?>" type="checkbox" <?php checked( isset( $instance['filter']['left'] ) ? $instance['filter']['left'] : false ); ?> />
 				&nbsp;
+				<label for="<?php echo $this->get_field_id( 'filter-left' ); ?>"><?php _e( 'Automatically add paragraphs', 'modern-business' ); ?></label>
 			</p>
 
 			<p>
@@ -83,6 +84,7 @@ if ( ! class_exists( 'MB_Hero_Widget' ) ) {
 				<?php // Filter Right Content (wpautop) ?>
 				<input id="<?php echo $this->get_field_id( 'filter-right' ); ?>" name="<?php echo $this->get_field_name( 'filter-right' ); ?>" type="checkbox" <?php checked( isset( $instance['filter']['right'] ) ? $instance['filter']['right'] : false ); ?> />
 				&nbsp;
+				<label for="<?php echo $this->get_field_id( 'filter-right' ); ?>"><?php _e( 'Automatically add paragraphs', 'modern-business' ); ?></label>
 			</p>
 		<?php
 		}
